@@ -27,10 +27,7 @@ app.get("/api/current_user", (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 mongoose
-  .connect(
-    "mongodb+srv://hari:1234@cluster0.2jvnd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    { useNewUrlParser: true, useUnifiedTopology: true }
-  )
+  .connect("mongourl", { useNewUrlParser: true, useUnifiedTopology: true })
   .then((der) => app.listen(PORT, console.log("sdsd", der.connection.host)))
   .catch((err) => console.log("sd", err));
 
